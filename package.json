@@ -1,0 +1,30 @@
+{
+  "name": "boxun-crawler",
+  "version": "0.1.0",
+  "description": "boxun news crawler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "crawler"
+  ],
+  "author": "YuanHsiang Cheng",
+  "license": "MIT",
+  "dependencies": {
+    "LiveScript": "^1.2.0",
+    "async": "^0.7.0",
+    "cheerio": "^0.15.0",
+    "iconv-lite": "^0.2.11",
+    "request": "^2.34.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yhsiang/boxun-crawler"
+  },
+  "bugs": {
+    "url": "https://github.com/yhsiang/boxun-crawler/issues"
+  },
+  "homepage": "https://github.com/yhsiang/boxun-crawler"
+}

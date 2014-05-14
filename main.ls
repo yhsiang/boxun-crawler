@@ -47,7 +47,7 @@ main = ->
   fs.mkdirSync 'data' unless fs.existsSync 'data'
 
   search (err, urls) ->
-    console.log '共有 ' + urls.length + '條新聞'
+    console.log '共有 ' + urls.length + '則新聞'
     txt = ''
     do
       link, index<- urls.forEach
@@ -63,6 +63,6 @@ main = ->
         next null, msg
     err, msgs<- async.series tasks
     console.log err if err
-    console.log "#{msgs.length} 已下載到data資料夾" if msgs.length is urls.length
+    console.log "#{msgs.length} 則新聞都已下載到data資料夾" if msgs.length is urls.length
 
 main!

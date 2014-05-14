@@ -48,7 +48,13 @@ main = ->
 
   search (err, urls) ->
     console.log '共有 ' + urls.length + '條新聞'
-    urls |> JSON.stringify |> fs.writeFileSync 'urls.txt', _
+    txt = ''
+    do
+      link, index<- urls.forEach
+      filename = link.filename.replace 'shtml', 'txt'
+      txt += "#{index+1} : #{link.title}, #{link.url}, #{filename}\n"
+
+    txt |> fs.writeFileSync 'urls.txt', _
 
     tasks = for let i from 0 to urls.length - 1 by 1
       (next) ->
@@ -57,5 +63,6 @@ main = ->
         next null, msg
     err, msgs<- async.series tasks
     console.log err if err
-    console.log "All tasks are finished." if msgs.length is urls.length
+    console.log "#{msgs.length} 已下載到data資料夾" if msgs.length is urls.length
+
 main!
